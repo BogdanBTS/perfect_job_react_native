@@ -5,13 +5,14 @@ import { Stack, useRouter } from "expo-router";
 import { COLORS, icons, images, SIZES } from "../constants";
 import {
   Nearbyjobs,
-  Popularjobs,
+  Recentjobs,
   ScreenHeaderBtn,
   Welcome,
 } from "../components";
 
 const Home = () => {
   const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -30,8 +31,16 @@ const Home = () => {
       />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, padding: SIZES.medium }}>
-          <Welcome />
-          <Popularjobs />
+          <Welcome
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            handleCLick={() => {
+              if (searchTerm) {
+                router.push(`/search/${searchTerm}`);
+              }
+            }}
+          />
+          <Recentjobs />
           <Nearbyjobs />
         </View>
       </ScrollView>

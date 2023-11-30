@@ -6,7 +6,7 @@ const NearbyJobCard = ({ job, handleNavigate }) => {
     return (
         <TouchableOpacity
             style={styles.container}
-            onPress={() => handleNavigate}>
+            onPress={handleNavigate}>
             <TouchableOpacity style={styles.logoContainer}>
                 <Image
                     source={{
@@ -19,7 +19,7 @@ const NearbyJobCard = ({ job, handleNavigate }) => {
             </TouchableOpacity>
             <View style={styles.textContainer}>
                 <Text style={styles.jobName} numberOfLines={1}>{job.job_title}</Text>
-                <Text style={styles.jobType}>{job.job_employment_type}</Text>
+                <Text style={styles.jobType}>{job.employer_name} - {job.job_employment_type}</Text>
             </View>
         </TouchableOpacity>
     )
