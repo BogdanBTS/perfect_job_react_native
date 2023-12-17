@@ -7,6 +7,7 @@ Use [`expo-router`](https://expo.github.io/router) to build native navigation us
 ```sh
 npx create-expo-app -e with-router
 ```
+Replace X-RapidAPI-Key in [id].js and useFetch.js for your key.
 
 ## 📝 Notes
 
